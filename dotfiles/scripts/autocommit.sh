@@ -27,7 +27,7 @@ while IFS= read -r path; do
 done < "$PATH_LIST"
 
 # Check if there are changes to commit
-if  diff --cached --quiet; then
+if bare diff --cached --quiet; then
     echo "No changes to commit."
     exit 0
 fi
